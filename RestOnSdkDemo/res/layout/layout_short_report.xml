@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/report_item_height"
+        android:orientation="horizontal" 
+        android:gravity="center_vertical"
+        >
+
+        <TextView
+            android:layout_width="@dimen/data_fragment_label_width"
+            android:layout_height="wrap_content"
+            android:text="@string/collection_date"
+            android:textColor="@color/COLOR_3"
+            android:textSize="@dimen/Title_4" />
+
+        <TextView
+            android:id="@+id/tv_collect_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/COLOR_3"
+            android:textSize="@dimen/Title_4" />
+    </LinearLayout>
+    
+    <View style="@style/page_divider"/>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/report_item_height"
+        android:orientation="horizontal" 
+        android:gravity="center_vertical"
+        >
+
+        <TextView
+            android:layout_width="@dimen/data_fragment_label_width"
+            android:layout_height="wrap_content"
+            android:text="@string/sleeping_time"
+            android:textColor="@color/COLOR_3"
+            android:textSize="@dimen/Title_4" />
+
+        <TextView
+            android:id="@+id/tv_sleep_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/COLOR_3"
+            android:textSize="@dimen/Title_4" />
+    </LinearLayout>
+    
+    <View style="@style/page_divider"/>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/report_item_height"
+        android:orientation="horizontal" 
+        android:gravity="center_vertical"
+        >
+
+        <TextView
+            android:layout_width="@dimen/data_fragment_label_width"
+            android:layout_height="wrap_content"
+            android:text="@string/sleep_duration"
+            android:textColor="@color/COLOR_3"
+            android:textSize="@dimen/Title_4" />
+
+        <TextView
+            android:id="@+id/tv_sleep_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/COLOR_3"
+            android:textSize="@dimen/Title_4" />
+    </LinearLayout>
+    
+    <View style="@style/page_divider"/>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/report_item_height"
+        android:orientation="horizontal" 
+        android:gravity="center_vertical"
+        >
+
+        <TextView
+            android:layout_width="@dimen/data_fragment_label_width"
+            android:layout_height="wrap_content"
+            android:text="@string/heart_rate"
+            android:textColor="@color/COLOR_3"
+            android:textSize="@dimen/Title_4" />
+
+        <TextView
+            android:id="@+id/tv_avg_heartrate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/COLOR_3"
+            android:textSize="@dimen/Title_4" />
+    </LinearLayout>
+    
+    <View style="@style/page_divider"/>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/report_item_height"
+        android:orientation="horizontal" 
+        android:gravity="center_vertical"
+        >
+
+        <TextView
+            android:layout_width="@dimen/data_fragment_label_width"
+            android:layout_height="wrap_content"
+            android:text="@string/respiration_rate"
+            android:textColor="@color/COLOR_3"
+            android:textSize="@dimen/Title_4" />
+
+        <TextView
+            android:id="@+id/tv_avg_breathrate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/COLOR_3"
+            android:textSize="@dimen/Title_4" />
+    </LinearLayout>
+    
+    <View style="@style/page_divider"/>
+    
+    
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

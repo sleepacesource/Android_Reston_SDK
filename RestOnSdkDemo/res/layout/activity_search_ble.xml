@@ -1,0 +1,82 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/page_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/header" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginLeft="15dp"
+        android:gravity="center_vertical"
+        android:text="@string/process"
+        android:textColor="@color/COLOR_4"
+        android:textSize="@dimen/Title_3" />
+
+    <TextView style="@style/logWin" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_margin"
+        android:paddingRight="@dimen/activity_margin"
+        android:paddingTop="0dp" >
+
+        <TextView
+            android:id="@+id/tips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:minHeight="44dp"
+            android:text="@string/select_device_id"
+            android:textColor="@color/COLOR_3"
+            android:textSize="@dimen/Title_3" />
+
+        <View style="@style/page_divider" />
+
+        <RelativeLayout
+            android:id="@+id/layout_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:descendantFocusability="blocksDescendants" >
+
+            <TextView
+                android:id="@+id/tv_refresh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_refresh"
+                android:clickable="false"
+                android:focusable="false"
+                android:gravity="center_vertical"
+                android:text="@string/refresh"
+                android:textColor="@color/COLOR_4"
+                android:textSize="@dimen/Title_4" />
+
+            <ImageView
+                android:id="@+id/iv_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:clickable="false"
+                android:focusable="false"
+                android:src="@drawable/bg_refresh" />
+        </RelativeLayout>
+
+        <View style="@style/page_divider" />
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:cacheColorHint="@color/transparent"
+            android:scrollbars="none" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,84 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/page_bg" >
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/ic_launcher" 
+        android:scaleType="fitXY"
+        />
+    
+    <TextView
+        android:id="@+id/tv_ver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/COLOR_3"
+        android:textSize="@dimen/Title_4" />
+
+    <TextView
+        android:id="@+id/tv_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_ver"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="@string/index_guide1"
+        android:textColor="@color/COLOR_3"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_contact"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="@string/index_guide2"
+        android:textColor="@color/COLOR_2"
+        android:textSize="20sp" />
+    
+    <Button 
+        android:id="@+id/btn_skip"
+        style="@style/common_bt"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:text="@string/ignore"
+        />
+    
+    <Button 
+        android:id="@+id/btn_search_device"
+        style="@style/common_bt"
+        android:layout_above="@id/btn_skip"
+        android:layout_marginBottom="15dp"
+        android:text="@string/search_device"
+        />
+
+</RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

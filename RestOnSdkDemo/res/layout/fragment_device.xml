@@ -1,0 +1,206 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/page_bg"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_margin"
+        android:paddingRight="@dimen/activity_margin" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:text="@string/process"
+            android:textColor="@color/COLOR_4"
+            android:textSize="@dimen/Title_3" />
+
+        <TextView
+            style="@style/logWin"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:text="@string/connect_device"
+            android:textColor="@color/COLOR_4"
+            android:textSize="@dimen/Title_3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_get_device_name"
+                style="@style/common_bt"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:text="@string/obtain_device_name" />
+
+            <TextView
+                android:id="@+id/tv_device_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/execute_progress_win_bg"
+                android:gravity="center"
+                android:textColor="@color/COLOR_3"
+                android:textSize="@dimen/Title_3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_get_device_id"
+                style="@style/common_bt"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:text="@string/obtain_device_id" />
+
+            <TextView
+                android:id="@+id/tv_device_id"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/execute_progress_win_bg"
+                android:gravity="center"
+                android:textColor="@color/COLOR_3"
+                android:textSize="@dimen/Title_3" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:text="@string/device_info"
+            android:textColor="@color/COLOR_4"
+            android:textSize="@dimen/Title_3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_get_device_battery"
+                style="@style/common_bt"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:text="@string/obtain_battery" />
+
+            <TextView
+                android:id="@+id/tv_device_battery"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/execute_progress_win_bg"
+                android:gravity="center"
+                android:textColor="@color/COLOR_3"
+                android:textSize="@dimen/Title_3" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:text="@string/fireware_info"
+            android:textColor="@color/COLOR_4"
+            android:textSize="@dimen/Title_3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_device_version"
+                style="@style/common_bt"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:text="@string/obtain_fireware_version" />
+
+            <TextView
+                android:id="@+id/tv_device_version"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/execute_progress_win_bg"
+                android:gravity="center"
+                android:textColor="@color/COLOR_3"
+                android:textSize="@dimen/Title_3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_upgrade_fireware"
+                style="@style/common_bt"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:text="@string/fireware_update" />
+
+            <TextView
+                android:id="@+id/tv_upgrade_fireware"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/execute_progress_win_bg"
+                android:gravity="center"
+                android:textColor="@color/COLOR_3"
+                android:textSize="@dimen/Title_3" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_disconnect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="@string/disconnect"
+            android:textColor="@drawable/menu_text_color"
+            android:textSize="@dimen/Title_1" />
+    </LinearLayout>
+
+</ScrollView>

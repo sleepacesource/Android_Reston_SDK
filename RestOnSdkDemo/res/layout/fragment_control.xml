@@ -1,0 +1,208 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/page_bg"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_margin"
+        android:paddingRight="@dimen/activity_margin" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:text="@string/process"
+            android:textColor="@color/COLOR_4"
+            android:textSize="@dimen/Title_3" />
+
+        <TextView
+            style="@style/logWin"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_collect_status"
+                style="@style/common_bt"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:text="@string/obtain_working_state" />
+
+            <TextView
+                android:id="@+id/tv_collect_status"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/execute_progress_win_bg"
+                android:gravity="center"
+                android:textColor="@color/COLOR_3"
+                android:textSize="@dimen/Title_3" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_set_auto_collect"
+            style="@style/common_bt"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/set_auto_monitor" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_start_collect"
+                style="@style/common_bt"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:text="@string/start_collection" />
+
+            <Button
+                android:id="@+id/btn_stop_collect"
+                style="@style/common_bt"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="0dp"
+                android:layout_weight="1"
+                android:text="@string/off_collection" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_realtime_data"
+            style="@style/common_bt"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/view_data" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/sleep_state"
+                android:textColor="@color/COLOR_4"
+                android:textSize="@dimen/Title_3" />
+
+            <TextView
+                android:id="@+id/tv_sleep_status"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/COLOR_3"
+                android:textSize="@dimen/Title_3" />
+        </LinearLayout>
+        
+        <View
+            style="@style/page_divider"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/heartrate"
+                android:textColor="@color/COLOR_4"
+                android:textSize="@dimen/Title_3" />
+
+            <TextView
+                android:id="@+id/tv_heartrate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/COLOR_3"
+                android:textSize="@dimen/Title_3" />
+        </LinearLayout>
+        
+        <View
+            style="@style/page_divider"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/breathrate"
+                android:textColor="@color/COLOR_4"
+                android:textSize="@dimen/Title_3" />
+
+            <TextView
+                android:id="@+id/tv_breathrate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/COLOR_3"
+                android:textSize="@dimen/Title_3" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_signal_strength"
+            style="@style/common_bt"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="0dp"
+            android:text="@string/view_signal_strength" />
+
+        <Button
+            android:id="@+id/btn_stop_realtime_data"
+            style="@style/common_bt"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/off_data" />
+    </LinearLayout>
+
+</ScrollView>

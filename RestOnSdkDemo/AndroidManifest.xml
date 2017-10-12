@@ -1,0 +1,59 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.restonsdk.demo"
+    android:versionCode="1"
+    android:versionName="3.0.0.0" >
+
+    <uses-sdk
+        android:minSdkVersion="18"
+        android:targetSdkVersion="18" />
+    
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+	<uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>  
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> 
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" 
+        android:name="com.restonsdk.demo.DemoApp" >
+        
+         <activity
+            android:name="com.restonsdk.demo.SplashActivity"
+            android:screenOrientation="portrait" ><!-- SplashActivity -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+         <activity
+            android:name="com.restonsdk.demo.MainActivity"
+            android:screenOrientation="portrait"
+            />
+         
+         <activity
+            android:name="com.restonsdk.demo.SearchBleDeviceActivity"
+            android:screenOrientation="portrait"
+            />
+         
+         <activity
+            android:name="com.restonsdk.demo.ConnectDeviceActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            />
+         <activity
+            android:name="com.restonsdk.demo.AutoStartActivity"
+            android:screenOrientation="portrait"
+            />
+         <activity
+            android:name="com.restonsdk.demo.RawDataActivity"
+            android:screenOrientation="portrait"
+            />
+         
+    </application>
+
+</manifest>

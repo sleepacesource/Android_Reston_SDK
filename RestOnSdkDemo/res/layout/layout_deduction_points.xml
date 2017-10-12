@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="2dp"
+    android:paddingTop="2dp" 
+    >
+
+    <TextView
+        android:id="@+id/tv_deduction_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/COLOR_3"
+        android:textSize="@dimen/Title_4" 
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:gravity="left"
+        />
+    
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_weight="1"
+        />
+    
+    <TextView
+        android:id="@+id/tv_deduction_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/COLOR_3"
+        android:textSize="@dimen/Title_4" 
+        android:layout_marginRight="10dp"
+        android:gravity="right"
+        />
+
+</LinearLayout>

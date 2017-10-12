@@ -1,0 +1,68 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/page_bg"
+    android:paddingLeft="@dimen/activity_margin"
+    android:paddingRight="@dimen/activity_margin"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:text="@string/process"
+            android:textColor="@color/COLOR_4"
+            android:textSize="@dimen/Title_3" />
+
+        <TextView
+            style="@style/logWin"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            />
+
+        <Button
+            android:id="@+id/btn_sleep_analysis"
+            style="@style/common_bt"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/sleep_analysis" />
+
+        <Button
+            android:id="@+id/btn_sleep_short"
+            style="@style/common_bt"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/imitate_data_short" />
+
+        <Button
+            android:id="@+id/btn_sleep_long"
+            style="@style/common_bt"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/imitate_data_long" />
+
+        <LinearLayout
+            android:id="@+id/layout_chart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical" />
+        
+    </LinearLayout>
+
+</ScrollView>

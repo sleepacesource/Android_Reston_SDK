@@ -1,0 +1,72 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    
+    
+    <!--常规按钮的基本参数-->
+    <style name="common_bt">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">55dp</item>
+        <item name="android:textSize">@dimen/Title_1</item>
+        <item name="android:textColor">@color/COLOR_9</item>
+        <item name="android:background">@drawable/long_btn_bg</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+    </style>
+    
+    <style name="page_divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">@color/black_10</item>
+    </style>
+    
+    <style name="logWin">
+        <item name="android:id">@id/tv_log</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">200dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:textColor">@color/COLOR_3</item>
+        <item name="android:textSize">@dimen/Title_4</item>
+        <item name="android:background">@drawable/execute_progress_win_bg</item>
+        <item name="android:lineSpacingExtra">3dp</item>
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:fadeScrollbars">false</item>
+    </style>
+
+</resources>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
