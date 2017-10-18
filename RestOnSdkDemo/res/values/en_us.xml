@@ -14,8 +14,8 @@
   <string name="device">Device</string>
   <string name="control">Control</string>
   <string name="report">Report</string>
-  <string name="sign_device_guide">Click the "Connect Device" when input is complete</string>
-  <string name="user_id">User ID</string>
+  <string name="sign_device_guide">Enter the user\'s unique identifier to distinguish between sleep data attribution</string>
+  <string name="user_id">Unique User Identifier</string>
   <string name="connect_device">Connect Device</string>
   <string name="obtain_device_name">Get Device Name</string>
   <string name="obtain_device_id">Get Device ID</string>
@@ -164,7 +164,7 @@
   <string name="light_">Light</string>
   <string name="mid_">Mid</string>
   <string name="deep_">Deep</string>
-  <string name="device_code">Device Code</string>
+  <string name="device_code">Device Code，Please contact Sleepace</string>
   <string name="starting_point">Start Time</string>
   <string name="end_point">End Time</string>
   <string name="leave_pillow">Left Pillow</string>

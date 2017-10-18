@@ -13,8 +13,8 @@
   <string name="device">设备</string>
   <string name="control">控制</string>
   <string name="report">数据</string>
-  <string name="sign_device_guide">输入完成后点击“连接设备”</string>
-  <string name="user_id">User ID</string>
+  <string name="sign_device_guide">输入用户唯一标识，用于区分睡眠数据归属</string>
+  <string name="user_id">用户唯一标识</string>
   <string name="connect_device">连接设备</string>
   <string name="obtain_device_name">获取设备名</string>
   <string name="obtain_device_id">获取设备ID</string>
@@ -163,7 +163,7 @@
   <string name="light_">浅睡</string>
   <string name="mid_">中睡</string>
   <string name="deep_">深睡</string>
-  <string name="device_code">设备编码</string>
+  <string name="device_code">设备编码，请联系Sleepace获取</string>
   <string name="starting_point">开始时间</string>
   <string name="end_point">结束时间</string>
   <string name="leave_pillow">离枕</string>

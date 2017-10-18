@@ -37,14 +37,13 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/activity_margin"
         android:layout_marginRight="@dimen/activity_margin"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:gravity="center_vertical"
         android:orientation="horizontal" >
 
         <TextView
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:text="User ID"
             android:textColor="@color/COLOR_3"
             android:textSize="@dimen/Title_4" />
@@ -53,6 +52,7 @@
             android:id="@+id/et_userid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:background="@drawable/execute_progress_win_bg"
             android:gravity="center_vertical"
             android:hint="@string/user_id"
@@ -66,39 +66,32 @@
             android:textSize="@dimen/Title_3" />
     </LinearLayout>
 
-    <LinearLayout
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_margin"
+        android:layout_marginTop="15dp"
+        android:text="@string/device_code"
+        android:textColor="@color/COLOR_4"
+        android:textSize="@dimen/Title_3" />
+
+    <TextView
+        android:id="@+id/tv_device_code"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/activity_margin"
         android:layout_marginRight="@dimen/activity_margin"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/execute_progress_win_bg"
+        android:drawableRight="@drawable/ic_arrow_d"
         android:gravity="center_vertical"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/device_code"
-            android:textColor="@color/COLOR_3"
-            android:textSize="@dimen/Title_4" />
-
-        <TextView
-            android:id="@+id/tv_device_code"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/execute_progress_win_bg"
-            android:gravity="center_vertical"
-            android:lines="1"
-            android:paddingBottom="10dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="10dp"
-            android:textColor="@color/COLOR_3"
-            android:textSize="@dimen/Title_3" 
-            android:drawableRight="@drawable/ic_arrow_d"
-            />
-    </LinearLayout>
+        android:lines="1"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:textColor="@color/COLOR_3"
+        android:textSize="@dimen/Title_3" />
 
     <Button
         android:id="@+id/btn_connect_device"
