@@ -4,8 +4,8 @@ package com.restonsdk.demo;
 import com.restonsdk.demo.util.DensityUtil;
 import com.restonsdk.demo.view.RealTimeView;
 import com.sleepace.sdk.core.heartbreath.domain.OriginalData;
-import com.sleepace.sdk.interfs.IDataCallback;
 import com.sleepace.sdk.interfs.IMonitorManager;
+import com.sleepace.sdk.interfs.IResultCallback;
 import com.sleepace.sdk.manager.CallbackData;
 import com.sleepace.sdk.reston.RestOnHelper;
 import com.sleepace.sdk.util.LogUtil;
@@ -69,23 +69,23 @@ public class RawDataActivity extends BaseActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        restonHelper.stopOriginalData(1000, new IDataCallback<Void>() {
+        restonHelper.stopOriginalData(1000, new IResultCallback<Void>() {
 			@Override
-			public void onDataCallback(CallbackData<Void> cd) {
+			public void onResultCallback(CallbackData<Void> cd) {
 				// TODO Auto-generated method stub
 				LogUtil.log(TAG+" stopOriginalData " + cd);
 			}
 		});
     }
     
-    private IDataCallback<OriginalData> rawDataCB = new IDataCallback<OriginalData>() {
+    private IResultCallback<OriginalData> rawDataCB = new IResultCallback<OriginalData>() {
 		@Override
-		public void onDataCallback(final CallbackData<OriginalData> cd) {
+		public void onResultCallback(final CallbackData<OriginalData> cd) {
 			// TODO Auto-generated method stub
 //			LogUtil.log(TAG+" rawDataCB " + cd);
-			if(cd.getType() == IMonitorManager.TYPE_START_RAW_DATA){//接口执行结果回调
+			if(cd.getCallbackType() == IMonitorManager.METHOD_RAW_DATA_OPEN){//接口执行结果回调
 				
-			}else if(cd.getType() == IMonitorManager.TYPE_RAW_DATA){//原始数据回调
+			}else if(cd.getCallbackType() == IMonitorManager.METHOD_RAW_DATA){//原始数据回调
 				if(cd.isSuccess()){
 					OriginalData data = cd.getResult();
 					int len = data.getHeartRate() == null ? 0 : data.getHeartRate().length;

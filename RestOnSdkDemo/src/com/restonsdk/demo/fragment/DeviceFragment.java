@@ -7,8 +7,8 @@ import com.restonsdk.demo.MainActivity;
 import com.restonsdk.demo.R;
 import com.sleepace.sdk.core.heartbreath.domain.BatteryBean;
 import com.sleepace.sdk.interfs.IConnectionStateCallback;
-import com.sleepace.sdk.interfs.IDataCallback;
 import com.sleepace.sdk.interfs.IDeviceManager;
+import com.sleepace.sdk.interfs.IResultCallback;
 import com.sleepace.sdk.manager.CONNECTION_STATE;
 import com.sleepace.sdk.manager.CallbackData;
 import com.sleepace.sdk.manager.DeviceMaterial;
@@ -155,9 +155,9 @@ public class DeviceFragment extends BaseFragment {
 			mActivity.showUpgradeDialog();
 			upgrading = true;
 //			InputStream is = getResources().getAssets().open("Z2_V1.11.des");
-			getRestonHelper().upgradeDevice(bean.crcDes, bean.crcBin, bean.is, new IDataCallback<Integer>() {
+			getRestonHelper().upgradeDevice(bean.crcDes, bean.crcBin, bean.is, new IResultCallback<Integer>() {
 				@Override
-				public void onDataCallback(final CallbackData<Integer> cd) {
+				public void onResultCallback(final CallbackData<Integer> cd) {
 					// TODO Auto-generated method stub
 					mActivity.runOnUiThread(new Runnable() {
 						@Override
@@ -194,9 +194,9 @@ public class DeviceFragment extends BaseFragment {
 			printLog(getString(R.string.get_device_id, mActivity.getDevice().getDeviceId()));
 		}else if(v == btnPower){
 			printLog(R.string.getting_power);
-			getRestonHelper().getBattery(1000, new IDataCallback<BatteryBean>() {
+			getRestonHelper().getBattery(1000, new IResultCallback<BatteryBean>() {
 				@Override
-				public void onDataCallback(final CallbackData<BatteryBean> cd) {
+				public void onResultCallback(final CallbackData<BatteryBean> cd) {
 					// TODO Auto-generated method stub
 					mActivity.runOnUiThread(new Runnable() {
 						@Override
@@ -214,9 +214,9 @@ public class DeviceFragment extends BaseFragment {
 			});
 		}else if(v == btnVersion){
 			printLog(R.string.getting_current_version);
-			getRestonHelper().getDeviceVersion(1000, new IDataCallback<String>() {
+			getRestonHelper().getDeviceVersion(1000, new IResultCallback<String>() {
 				@Override
-				public void onDataCallback(final CallbackData<String> cd) {
+				public void onResultCallback(final CallbackData<String> cd) {
 					// TODO Auto-generated method stub
 					mActivity.runOnUiThread(new Runnable() {
 						@Override

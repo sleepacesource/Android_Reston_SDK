@@ -1,7 +1,7 @@
 package com.restonsdk.demo;
 
+import com.sleepace.sdk.constant.StatusCode;
 import com.sleepace.sdk.manager.CallbackData;
-import com.sleepace.sdk.util.StatusCode;
 
 import android.app.Activity;
 import android.os.Bundle;

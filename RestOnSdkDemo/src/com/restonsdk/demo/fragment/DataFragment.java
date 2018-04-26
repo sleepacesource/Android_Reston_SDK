@@ -24,13 +24,13 @@ import com.sleepace.sdk.core.heartbreath.domain.Summary;
 import com.sleepace.sdk.core.heartbreath.util.AnalysisUtil;
 import com.sleepace.sdk.core.heartbreath.util.SleepConfig;
 import com.sleepace.sdk.interfs.IConnectionStateCallback;
-import com.sleepace.sdk.interfs.IDataCallback;
 import com.sleepace.sdk.interfs.IDeviceManager;
+import com.sleepace.sdk.interfs.IResultCallback;
 import com.sleepace.sdk.manager.CONNECTION_STATE;
 import com.sleepace.sdk.manager.CallbackData;
 import com.sleepace.sdk.manager.DeviceType;
 import com.sleepace.sdk.util.LogUtil;
-import com.sleepace.sdk.util.TimeUtill;
+import com.sleepace.sdk.util.TimeUtil;
 
 import android.app.ProgressDialog;
 import android.graphics.Color;
@@ -145,9 +145,9 @@ public class DataFragment extends BaseFragment {
 			cal.set(Calendar.MINUTE, 0);
 			cal.set(Calendar.SECOND, 0);
 			int startTime = (int) (cal.getTimeInMillis() / 1000);
-			getRestonHelper().historyDownload(0, endTime, 1, new IDataCallback<List<HistoryData>>() {
+			getRestonHelper().historyDownload(0, endTime, 1, new IResultCallback<List<HistoryData>>() {
 				@Override
-				public void onDataCallback(final CallbackData<List<HistoryData>> cd) {
+				public void onResultCallback(final CallbackData<List<HistoryData>> cd) {
 					// TODO Auto-generated method stub
 					mActivity.runOnUiThread(new Runnable() {
 						@Override
@@ -238,7 +238,7 @@ public class DataFragment extends BaseFragment {
 		
 		View view = inflater.inflate(R.layout.layout_long_report, null);
 		LinearLayout mainGraph = (LinearLayout) view.findViewById(R.id.layout_chart);
-		GraphView.GraphViewData[] mainData = getSleepGraphData(historyData.getDetail(), historyData.getAnaly(), historyData.getSummary().getTimeStep(), DeviceType.DEVICE_TYPE_Z2);
+		GraphView.GraphViewData[] mainData = getSleepGraphData(historyData.getDetail(), historyData.getAnaly(), 60, DeviceType.DEVICE_TYPE_Z2);
 
 		int think = (int) (DensityUtil.dip2px(mActivity, 1) * 0.8);
 		final LineGraphView main_graph = new LineGraphView(mActivity, "");
@@ -259,7 +259,7 @@ public class DataFragment extends BaseFragment {
 		main_graph.setVerticalLabels(
 				new String[] { "", getString(R.string.wake_), getString(R.string.light_), getString(R.string.mid_), getString(R.string.deep_), "" });
 
-		main_graph.setBeginAndOffset(historyData.getSummary().getStartTime(), historyData.getSummary().getTimezone(), 0);
+		main_graph.setBeginAndOffset(historyData.getSummary().getStartTime(), TimeUtil.getTimeZoneSecond(), 0);
 		main_graph.setScalable(false);
 		main_graph.setScrollable(false);
 		main_graph.setShowLegend(false);
@@ -507,8 +507,6 @@ public class DataFragment extends BaseFragment {
 		Summary summ = new Summary();
 		summ.setStartTime(starttime);
 		summ.setRecordCount(count);
-		summ.setTimezone(TimeUtill.getTimeZone());
-		summ.setTimeStep(60);
 		historyData.setSummary(summ);
 
 		Detail detail = new Detail();
@@ -553,8 +551,6 @@ public class DataFragment extends BaseFragment {
 		Summary summ = new Summary();
 		summ.setStartTime(starttime);
 		summ.setRecordCount(count);
-		summ.setTimezone(TimeUtill.getTimeZone());
-		summ.setTimeStep(60);
 		historyData.setSummary(summ);
 
 		Detail detail = new Detail();

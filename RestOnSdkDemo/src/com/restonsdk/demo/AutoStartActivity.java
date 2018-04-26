@@ -4,7 +4,7 @@ import com.restonsdk.demo.view.wheelview.NumericWheelAdapter;
 import com.restonsdk.demo.view.wheelview.OnItemSelectedListener;
 import com.restonsdk.demo.view.wheelview.WheelAdapter;
 import com.restonsdk.demo.view.wheelview.WheelView;
-import com.sleepace.sdk.interfs.IDataCallback;
+import com.sleepace.sdk.interfs.IResultCallback;
 import com.sleepace.sdk.manager.CallbackData;
 import com.sleepace.sdk.reston.RestOnHelper;
 import com.sleepace.sdk.util.LogUtil;
@@ -80,9 +80,9 @@ public class AutoStartActivity extends BaseActivity {
 			final int minute = wvMinute.getCurrentItem();
 			printLog(getString(R.string.writing_automatically_monitor_device, String.format("%02d:%02d", hour,minute)));
 			int repeat = 127; //转车二进制 ：01111111，从右到左，分别表示周一，周二，周三，如果该位是1，表示当天重复，否则不重复。故127表示，周一到周日重复
-			restonHelper.setAutoCollection(true, hour, minute, repeat, 1000, new IDataCallback<Void>() {
+			restonHelper.setAutoCollection(true, hour, minute, repeat, 1000, new IResultCallback<Void>() {
 				@Override
-				public void onDataCallback(final CallbackData<Void> cd) {
+				public void onResultCallback(final CallbackData<Void> cd) {
 					// TODO Auto-generated method stub
 					LogUtil.log(TAG+" setAutoCollection hour:" + hour+",minute:" + minute + " " + cd);
 					runOnUiThread(new Runnable() {

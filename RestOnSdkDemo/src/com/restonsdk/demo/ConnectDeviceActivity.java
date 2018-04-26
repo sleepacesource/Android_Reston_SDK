@@ -1,12 +1,12 @@
 package com.restonsdk.demo;
 
+import com.sleepace.sdk.constant.DeviceCode;
 import com.sleepace.sdk.core.heartbreath.domain.LoginBean;
 import com.sleepace.sdk.domain.BleDevice;
-import com.sleepace.sdk.interfs.IDataCallback;
+import com.sleepace.sdk.interfs.IResultCallback;
 import com.sleepace.sdk.manager.CallbackData;
+import com.sleepace.sdk.manager.DeviceType;
 import com.sleepace.sdk.reston.RestOnHelper;
-import com.sleepace.sdk.util.DeviceCode;
-import com.sleepace.sdk.util.SleepUtil;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -125,9 +125,9 @@ public class ConnectDeviceActivity extends BaseActivity {
 //        		mSetting.edit().putString("uid", uid).commit();
             	
         		int userId = Integer.valueOf(uid);
-        		restonHelper.login(device.getDeviceName(), device.getAddress(), deviceCode, userId, 10 * 1000, new IDataCallback<LoginBean>() {
+        		restonHelper.login(device.getDeviceName(), device.getAddress(), deviceCode, userId, 10 * 1000, new IResultCallback<LoginBean>() {
 					@Override
-					public void onDataCallback(final CallbackData<LoginBean> cd) {
+					public void onResultCallback(final CallbackData<LoginBean> cd) {
 						// TODO Auto-generated method stub
 						
 						runOnUiThread(new Runnable() {
@@ -138,7 +138,7 @@ public class ConnectDeviceActivity extends BaseActivity {
 								if(cd.isSuccess()){
 									printLog(R.string.connect_device_successfully);
 									LoginBean bean =  cd.getResult();
-									device.setDeviceType(SleepUtil.getDeviceTypeFromCode(deviceCode));
+									device.setDeviceType(DeviceType.getDeviceType(deviceCode));
 									device.setDeviceId(bean.getDeviceId());
 									Intent intent = new Intent(mContext, MainActivity.class);
 									intent.putExtra("device", device);
