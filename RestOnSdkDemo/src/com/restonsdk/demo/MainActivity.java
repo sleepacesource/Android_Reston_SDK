@@ -8,7 +8,7 @@ import com.sleepace.sdk.interfs.IConnectionStateCallback;
 import com.sleepace.sdk.interfs.IDeviceManager;
 import com.sleepace.sdk.manager.CONNECTION_STATE;
 import com.sleepace.sdk.reston.RestOnHelper;
-import com.sleepace.sdk.util.LogUtil;
+import com.sleepace.sdk.util.SdkLog;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -136,7 +136,7 @@ public class MainActivity extends BaseActivity {
 		@Override
 		public void onStateChanged(IDeviceManager manager, CONNECTION_STATE state) {
 			// TODO Auto-generated method stub
-			LogUtil.log(TAG+" onStateChanged state:" + state);
+			SdkLog.log(TAG+" onStateChanged state:" + state);
 			if(state == CONNECTION_STATE.DISCONNECT){
 				collectStatus = -1;
 			}

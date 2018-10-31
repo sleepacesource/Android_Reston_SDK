@@ -13,7 +13,7 @@ import com.sleepace.sdk.interfs.IMonitorManager;
 import com.sleepace.sdk.interfs.IResultCallback;
 import com.sleepace.sdk.manager.CONNECTION_STATE;
 import com.sleepace.sdk.manager.CallbackData;
-import com.sleepace.sdk.util.LogUtil;
+import com.sleepace.sdk.util.SdkLog;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -32,7 +32,7 @@ public class ControlFragment extends BaseFragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		super.onCreateView(inflater, container, savedInstanceState);
 		View view = inflater.inflate(R.layout.fragment_control, null);
-//		LogUtil.log(TAG+" onCreateView-----------");
+//		SdkLog.log(TAG+" onCreateView-----------");
 		findView(view);
 		initListener();
 		initUI();
@@ -90,7 +90,7 @@ public class ControlFragment extends BaseFragment {
 		// TODO Auto-generated method stub
 		super.onResume();
 		printLog(null);
-		LogUtil.log(TAG+" onResume collectStatus:" + MainActivity.collectStatus);
+		SdkLog.log(TAG+" onResume collectStatus:" + MainActivity.collectStatus);
 		if(MainActivity.collectStatus == 1){
 			tvCollectStatus.setText(R.string.working_state_ing);
 			btnStartCollect.setEnabled(false);
@@ -109,7 +109,7 @@ public class ControlFragment extends BaseFragment {
 	public void onDestroyView() {
 		// TODO Auto-generated method stub
 		super.onDestroyView();
-		LogUtil.log(TAG+" onDestroyView----------------");
+		SdkLog.log(TAG+" onDestroyView----------------");
 		getRestonHelper().removeConnectionStateCallback(stateCallback);
 	}
 	
@@ -154,7 +154,7 @@ public class ControlFragment extends BaseFragment {
 		// TODO Auto-generated method stub
 		super.onClick(v);
 		if(v == btnStartRealtimeData){
-			LogUtil.log(TAG+" startRealtime collS:" + MainActivity.collectStatus);
+			SdkLog.log(TAG+" startRealtime collS:" + MainActivity.collectStatus);
 			printLog(R.string.view_data);
 			getRestonHelper().startRealTimeData(1000, realtimeCB);
 		}else if(v == btnStopRealtimeData){
@@ -221,7 +221,7 @@ public class ControlFragment extends BaseFragment {
 							// TODO Auto-generated method stub
 							if(checkStatus(cd)){
 								MainActivity.collectStatus =  cd.getResult();
-								LogUtil.log(TAG+" getCollectionStatus collS:" + MainActivity.collectStatus);
+								SdkLog.log(TAG+" getCollectionStatus collS:" + MainActivity.collectStatus);
 								int textRes = MainActivity.collectStatus == 1 ? R.string.working_state_ing : R.string.working_state_not;
 								tvCollectStatus.setText(textRes);
 								printLog(textRes);
@@ -240,7 +240,7 @@ public class ControlFragment extends BaseFragment {
 									btnSignal.setEnabled(false);
 								}
 							}else{
-								if(cd.getStatus() == StatusCode.STATUS_DISCONNECT){
+								if(cd.getStatus() == StatusCode.DISCONNECT){
 									tvCollectStatus.setText(R.string.working_state_no);
 								}
 							}
@@ -263,7 +263,7 @@ public class ControlFragment extends BaseFragment {
 						@Override
 						public void run() {
 							// TODO Auto-generated method stub
-							LogUtil.log(TAG+" startCollection cd:" + cd);
+							SdkLog.log(TAG+" startCollection cd:" + cd);
 							if(checkStatus(cd)){
 								MainActivity.collectStatus = 1;
 								printLog(R.string.began_collect_success);
@@ -286,7 +286,7 @@ public class ControlFragment extends BaseFragment {
 			@Override
 			public void onResultCallback(final CallbackData<RealTimeData> cd) {
 				// TODO Auto-generated method stub
-//				LogUtil.log(TAG+" realtimeCB cd:" + cd +",isAdd:" + isAdded());
+//				SdkLog.log(TAG+" realtimeCB cd:" + cd +",isAdd:" + isAdded());
 				if(!isAdded()){
 					return;
 				}

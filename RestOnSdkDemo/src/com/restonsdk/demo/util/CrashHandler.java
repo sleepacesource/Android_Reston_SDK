@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.sleepace.sdk.util.LogUtil;
+import com.sleepace.sdk.util.SdkLog;
 import com.sleepace.sdk.util.StringUtil;
 
 import android.content.Context;
@@ -144,7 +144,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
 		printWriter.close();
 		String result = writer.toString();
 		sb.append(result);
-		LogUtil.log(sb);
+		SdkLog.log(sb);
 	}
 }
 

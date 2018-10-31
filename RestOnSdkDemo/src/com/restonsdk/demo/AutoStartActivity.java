@@ -7,7 +7,7 @@ import com.restonsdk.demo.view.wheelview.WheelView;
 import com.sleepace.sdk.interfs.IResultCallback;
 import com.sleepace.sdk.manager.CallbackData;
 import com.sleepace.sdk.reston.RestOnHelper;
-import com.sleepace.sdk.util.LogUtil;
+import com.sleepace.sdk.util.SdkLog;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -84,7 +84,7 @@ public class AutoStartActivity extends BaseActivity {
 				@Override
 				public void onResultCallback(final CallbackData<Void> cd) {
 					// TODO Auto-generated method stub
-					LogUtil.log(TAG+" setAutoCollection hour:" + hour+",minute:" + minute + " " + cd);
+					SdkLog.log(TAG+" setAutoCollection hour:" + hour+",minute:" + minute + " " + cd);
 					runOnUiThread(new Runnable() {
 						@Override
 						public void run() {

@@ -8,7 +8,7 @@ import com.sleepace.sdk.interfs.IMonitorManager;
 import com.sleepace.sdk.interfs.IResultCallback;
 import com.sleepace.sdk.manager.CallbackData;
 import com.sleepace.sdk.reston.RestOnHelper;
-import com.sleepace.sdk.util.LogUtil;
+import com.sleepace.sdk.util.SdkLog;
 
 import android.graphics.PointF;
 import android.os.Bundle;
@@ -73,7 +73,7 @@ public class RawDataActivity extends BaseActivity {
 			@Override
 			public void onResultCallback(CallbackData<Void> cd) {
 				// TODO Auto-generated method stub
-				LogUtil.log(TAG+" stopOriginalData " + cd);
+				SdkLog.log(TAG+" stopOriginalData " + cd);
 			}
 		});
     }
@@ -82,7 +82,7 @@ public class RawDataActivity extends BaseActivity {
 		@Override
 		public void onResultCallback(final CallbackData<OriginalData> cd) {
 			// TODO Auto-generated method stub
-//			LogUtil.log(TAG+" rawDataCB " + cd);
+//			SdkLog.log(TAG+" rawDataCB " + cd);
 			if(cd.getCallbackType() == IMonitorManager.METHOD_RAW_DATA_OPEN){//接口执行结果回调
 				
 			}else if(cd.getCallbackType() == IMonitorManager.METHOD_RAW_DATA){//原始数据回调
@@ -93,7 +93,7 @@ public class RawDataActivity extends BaseActivity {
 						if(i % 2 == 0){
 							continue;
 						}
-//						LogUtil.log(TAG+" rawDataCB i:" + i +",x:" + x+",heartRate:" +data.getHeartRate()[i]+",breathRate:" + data.getBreathRate()[i]);
+//						SdkLog.log(TAG+" rawDataCB i:" + i +",x:" + x+",heartRate:" +data.getHeartRate()[i]+",breathRate:" + data.getBreathRate()[i]);
 						heartView.add(new PointF(x, data.getHeartRate()[i]));
 						breathView.add(new PointF(x, data.getBreathRate()[i]));
 						x+=space;

@@ -176,19 +176,19 @@ public class BaseActivity extends Activity implements OnClickListener {
 	}
 	
 	public String getErrMsg(int status){
-		if(status == StatusCode.STATUS_BLUETOOTH_NOT_OPEN){
+		if(status == StatusCode.NOT_ENABLE){
 			return getString(R.string.not_bluetooth);
 		}
 		
-		if(status == StatusCode.STATUS_DISCONNECT){
+		if(status == StatusCode.DISCONNECT){
 			return getString(R.string.reconnect_device);
 		}
 		
-		if(status == StatusCode.STATUS_TIMEOUT){
+		if(status == StatusCode.TIMEOUT){
 			return getString(R.string.time_out);
 		}
 		
-		if(status == StatusCode.STATUS_FAILED){
+		if(status == StatusCode.FAIL){
 			return getString(R.string.failure);
 		}
 		

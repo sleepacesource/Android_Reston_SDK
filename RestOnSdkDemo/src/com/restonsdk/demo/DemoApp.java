@@ -1,6 +1,7 @@
 package com.restonsdk.demo;
 
 import com.restonsdk.demo.util.CrashHandler;
+import com.sleepace.sdk.util.SdkLog;
 
 import android.app.Application;
 
@@ -20,6 +21,7 @@ public class DemoApp extends Application {
         super.onCreate();
         instance = this;
         CrashHandler.getInstance().init(this);
+        SdkLog.setLogEnable(true);
     }
 
     @Override
