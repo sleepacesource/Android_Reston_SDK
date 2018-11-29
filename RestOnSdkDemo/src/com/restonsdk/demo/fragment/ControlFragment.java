@@ -290,7 +290,6 @@ public class ControlFragment extends BaseFragment {
 				if(!isAdded()){
 					return;
 				}
-				
 				mActivity.runOnUiThread(new Runnable() {
 					@Override
 					public void run() {
