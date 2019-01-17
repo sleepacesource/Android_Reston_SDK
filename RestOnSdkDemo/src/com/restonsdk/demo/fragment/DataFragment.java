@@ -23,6 +23,7 @@ import com.sleepace.sdk.core.heartbreath.domain.HistoryData;
 import com.sleepace.sdk.core.heartbreath.domain.Summary;
 import com.sleepace.sdk.core.heartbreath.util.AnalysisUtil;
 import com.sleepace.sdk.core.heartbreath.util.SleepConfig;
+import com.sleepace.sdk.core.heartbreath.util.SleepStatusType;
 import com.sleepace.sdk.interfs.IConnectionStateCallback;
 import com.sleepace.sdk.interfs.IDeviceManager;
 import com.sleepace.sdk.interfs.IResultCallback;
@@ -670,13 +671,14 @@ public class DataFragment extends BaseFragment {
 		int[] leftBedStatusAry = new int[len];
 		int[] turnOverStatusAry = new int[len];
 		for(int i=0;i<len;i++){
-			if ((analysis.getSleepCurveStatusArray()[i] & SleepConfig.NewBreathPause) == SleepConfig.NewBreathPause) { // 呼吸暂停点
+			byte state = (byte) (detail.getStatus()[i] & 7);
+			if(state == SleepStatusType.SLEEP_B_STOP) { // 呼吸暂停点
 				breathRateStatusAry[i] = detail.getStatusValue()[i];
-			}else if ((analysis.getSleepCurveStatusArray()[i] & SleepConfig.NewHeartPause) == SleepConfig.NewHeartPause) { // 心跳暂停点
+			}else if (state == SleepStatusType.SLEEP_H_STOP) { // 心跳暂停点
 				heartRateStatusAry[i] = detail.getStatusValue()[i];
-			}else if ((analysis.getSleepCurveStatusArray()[i] & SleepConfig.NewLeaveBed) == SleepConfig.NewLeaveBed) { // 离床
+			}else if (state == SleepStatusType.SLEEP_LEAVE && detail.getStatusValue()[i] > 0) { // 有效离床
 				leftBedStatusAry[i] = detail.getStatusValue()[i];
-			}else if ((analysis.getSleepCurveStatusArray()[i] & SleepConfig.NewTurnOver) == SleepConfig.NewTurnOver) { // 翻身
+			}else if (state == SleepStatusType.SLEEP_TURN_OVER) { // 翻身
 				turnOverStatusAry[i] = detail.getStatusValue()[i];
 			}
 		}
