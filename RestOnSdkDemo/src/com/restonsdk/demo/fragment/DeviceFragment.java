@@ -261,15 +261,20 @@ public class DeviceFragment extends BaseFragment {
 				crcDes = 2539419916l;
 				break;
 			case DEVICE_TYPE_Z4:
-				if(deviceType.getMaterial() == DeviceMaterial.Z4.MATERIAL_NO_TEMPERATURE_HUMIDITY){
-					is = getResources().getAssets().open("22-4_1.15.des");
-					crcBin = 3430449546l;
-					crcDes = 2909393882l;
-				}else{
-					is = getResources().getAssets().open("22-3_1.15.des");
-					crcBin = 3430449546l;
-					crcDes = 2909393882l;
-				}
+//				if(deviceType.getMaterial() == DeviceMaterial.Z4.MATERIAL_NO_TEMPERATURE_HUMIDITY){
+//					is = getResources().getAssets().open("22-4_1.15.des");
+//					crcBin = 3430449546l;
+//					crcDes = 2909393882l;
+//				}else{
+//					is = getResources().getAssets().open("22-3_1.15.des");
+//					crcBin = 3430449546l;
+//					crcDes = 2909393882l;
+//				}
+				
+				is = getResources().getAssets().open("Z400T-2(SW)-v1.31r(v2.0.2r)-p-20201231.des");
+				crcBin = 3048971386l;
+				crcDes = 1309530705l;
+				
 				break;
 			case DEVICE_TYPE_PILLOW:
 				if(deviceType.getMaterial() == DeviceMaterial.Pillow.MATERIAL_DEFAULT){

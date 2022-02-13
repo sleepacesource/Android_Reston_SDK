@@ -6,6 +6,7 @@ import java.util.List;
 import com.restonsdk.demo.util.BleDeviceNameUtil;
 import com.sleepace.sdk.domain.BleDevice;
 import com.sleepace.sdk.manager.ble.BleHelper;
+import com.sleepace.sdk.util.SdkLog;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -205,8 +206,8 @@ public class SearchBleDeviceActivity extends BaseActivity {
 		            if(deviceName != null){
 		            	deviceName = deviceName.trim();
 		            }
-		            
-		            if(!TextUtils.isEmpty(modelName) && !TextUtils.isEmpty(deviceName)){
+		            SdkLog.log(TAG+" onLeScan deviceName:" + deviceName+",modelName:" + modelName);
+		            if(/*!TextUtils.isEmpty(modelName) &&*/ !TextUtils.isEmpty(deviceName)){
 		            	BleDevice ble = new BleDevice();
 		            	ble.setModelName(modelName);
 		            	ble.setAddress(device.getAddress());

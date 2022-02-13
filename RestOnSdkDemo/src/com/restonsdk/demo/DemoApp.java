@@ -22,7 +22,7 @@ public class DemoApp extends Application {
         instance = this;
         CrashHandler.getInstance().init(this);
         SdkLog.setLogEnable(true);
-        SdkLog.setSaveLog(true);
+        SdkLog.setSaveLog(false);
     }
 
     @Override

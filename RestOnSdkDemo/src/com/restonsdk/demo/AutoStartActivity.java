@@ -4,6 +4,7 @@ import com.restonsdk.demo.view.wheelview.NumericWheelAdapter;
 import com.restonsdk.demo.view.wheelview.OnItemSelectedListener;
 import com.restonsdk.demo.view.wheelview.WheelAdapter;
 import com.restonsdk.demo.view.wheelview.WheelView;
+import com.sleepace.sdk.core.heartbreath.domain.AutoStartConfig;
 import com.sleepace.sdk.interfs.IResultCallback;
 import com.sleepace.sdk.manager.CallbackData;
 import com.sleepace.sdk.reston.RestOnHelper;
@@ -20,6 +21,7 @@ public class AutoStartActivity extends BaseActivity {
     private WheelAdapter hourAdapter, minuteAdapter;
     private Button btnSave;
     private RestOnHelper restonHelper;
+    private AutoStartConfig mConfig = new AutoStartConfig(true, (byte)22, (byte)0, (byte)127);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,14 +63,40 @@ public class AutoStartActivity extends BaseActivity {
         wvHour.setRate(5 / 4.0f);
         wvMinute.setRate(1 / 2.0f);
         
-        wvHour.setCurrentItem(22);
-        wvMinute.setCurrentItem(0);
+        initView();
     }
 
     @Override
     protected void onResume() {
         // TODO Auto-generated method stub
         super.onResume();
+        if(restonHelper.isConnected()) {
+        	restonHelper.getAutoCollection(3000, new IResultCallback<AutoStartConfig>() {
+				@Override
+				public void onResultCallback(final CallbackData<AutoStartConfig> cd) {
+					// TODO Auto-generated method stub
+					runOnUiThread(new Runnable() {
+						@Override
+						public void run() {
+							// TODO Auto-generated method stub
+							if(cd.isSuccess()){
+								AutoStartConfig config = cd.getResult();
+								mConfig.setEnable(config.isEnable());
+								mConfig.setHour(config.getHour());
+								mConfig.setMinute(config.getMinute());
+								mConfig.setRepeat(config.getRepeat());
+								initView();
+							}
+						}
+					});
+				}
+			});
+        }
+    }
+    
+    private void initView() {
+    	wvHour.setCurrentItem(mConfig.getHour());
+        wvMinute.setCurrentItem(mConfig.getMinute());
     }
 
 
